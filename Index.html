@@ -5,11 +5,20 @@
   <title>Fratello Home Pros</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your PUBLIC KEY
+    // Replace EMAILJS_PUBLIC_KEY with your actual public key
+    (function() {
+      emailjs.init("EMAILJS_PUBLIC_KEY");
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
     <div class="logo-area">
-      <!-- Simple logo made with text + rooftop shape -->
       <div class="logo-icon">
         <div class="roof"></div>
         <div class="chimney"></div>
@@ -35,6 +44,142 @@
           </a>
         </div>
         <div class="contact-block">
+          <span class="contact-label">Joe:</span>
+          <a href="tel:15139406296">513-940-6296</a>
+          <a href="mailto:afixItservice@gmail.com">
+            afixItservice@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / What we do -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Professional Home Exterior &amp; Interior Services</h1>
+        <p>
+          At <strong>Fratello Home Pros</strong>, we treat every project—big or small—
+          with the same level of craftsmanship and care. From precision
+          exterior upgrades to detailed interior improvements, we deliver
+          reliable, high-quality work that stands the test of time.
+        </p>
+        <p>
+          Whether you need a single door replaced, a full deck build, or
+          comprehensive repairs, our team brings experience, professionalism,
+          and clear communication to every job.
+        </p>
+        <button class="btn secondary-btn" id="scrollToServices">
+          View Our Services
+        </button>
+      </div>
+      <div class="hero-images">
+        <div class="image-card image-deck">
+          <span>Custom Decks</span>
+        </div>
+        <div class="image-card image-windows">
+          <span>Premium Windows</span>
+        </div>
+        <div class="image-card image-roofing">
+          <span>Roofing &amp; Exteriors</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services dropdown -->
+    <section class="services-section" id="servicesSection">
+      <div class="services-header">
+        <h2>Services We Provide</h2>
+        <button class="btn primary-btn" id="servicesToggle">
+          Services We Provide ▾
+        </button>
+      </div>
+
+      <div class="services-list" id="servicesList">
+        <button class="service-item" data-service="Doors">Doors</button>
+        <button class="service-item" data-service="Windows">Window's</button>
+        <button class="service-item" data-service="Siding">Siding</button>
+        <button class="service-item" data-service="Soffits">Soffits</button>
+        <button class="service-item" data-service="Gutters">Gutters</button>
+        <button class="service-item" data-service="Shutters">Shutters</button>
+        <button class="service-item" data-service="Decking">Decks</button>
+        <button class="service-item" data-service="Flooring">Flooring</button>
+        <button class="service-item" data-service="Electrical">Electrical</button>
+        <button class="service-item" data-service="Framing">Framing</button>
+        <button class="service-item" data-service="Roofing">Roofing</button>
+        <button class="service-item" data-service="Plumbing">Plumbing</button>
+        <button class="service-item" data-service="Interior Repair">Interior repair</button>
+        <button class="service-item" data-service="Exterior Repair">Exterior repair</button>
+        <button class="service-item" data-service="Estimates">Estimate's</button>
+      </div>
+    </section>
+
+    <!-- Dynamic request form -->
+    <section class="form-section" id="requestFormSection">
+      <h2 id="formTitle">Request a Service</h2>
+      <p class="form-subtitle">
+        Fill out the form below and we’ll follow up with you as soon as possible.
+      </p>
+
+      <form id="serviceRequestForm">
+        <div class="form-row">
+          <label for="customerName">Customer's Name:</label>
+          <input type="text" id="customerName" name="customerName" required />
+        </div>
+
+        <div class="form-row">
+          <label for="customerAddress">Address:</label>
+          <input type="text" id="customerAddress" name="customerAddress" required />
+        </div>
+
+        <div class="form-row">
+          <label for="customerPhone">Phone Number:</label>
+          <input type="tel" id="customerPhone" name="customerPhone" required />
+        </div>
+
+        <div class="form-row">
+          <label for="workDescription">Description of Work Being Requested:</label>
+          <textarea id="workDescription" name="workDescription" rows="4" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="timeline">Requested Timeline:</label>
+          <input type="text" id="timeline" name="timeline" />
+        </div>
+
+        <div class="form-row">
+          <label for="priceRange">Allotted Price Range:</label>
+          <input type="text" id="priceRange" name="priceRange" />
+        </div>
+
+        <div class="form-row">
+          <label for="additionalDetails">Additional Details and/or Information:</label>
+          <textarea id="additionalDetails" name="additionalDetails" rows="3"></textarea>
+        </div>
+
+        <input type="hidden" id="selectedService" name="selectedService" value="General Request" />
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary-btn">
+            Submit Request
+          </button>
+        </div>
+      </form>
+
+      <p class="form-note">
+        This form will send your request directly to our email and trigger a text notification to our team.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Fratello Home Pros. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>        <div class="contact-block">
           <span class="contact-label">Joe:</span>
           <a href="tel:15139406296">513-940-6296</a>
           <a href="mailto:afixItservice@gmail.com">
