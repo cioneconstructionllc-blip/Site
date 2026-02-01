@@ -26,7 +26,7 @@ body {
   color: var(--text-main);
 }
 
-/ Header /
+/* Header */
 
 .site-header {
   display: flex;
@@ -133,7 +133,7 @@ body {
   text-decoration: underline;
 }
 
-/ Buttons /
+/* Buttons */
 
 .btn {
   border: none;
@@ -167,7 +167,7 @@ body {
   background: #e9f3fb;
 }
 
-/ Hero /
+/* Hero */
 
 .hero {
   display: grid;
@@ -242,7 +242,7 @@ body {
     url("https://images.pexels.com/photos/532568/pexels-photo-532568.jpeg");
 }
 
-/ Services /
+/* Services */
 
 .services-section {
   padding: 24px 6vw;
@@ -283,7 +283,7 @@ body {
   transform: translateY(-1px);
 }
 
-/ Form /
+/* Form */
 
 .form-section {
   padding: 24px 6vw 40px;
@@ -347,7 +347,7 @@ form {
   color: var(--text-muted);
 }
 
-/ Footer /
+/* Footer */
 
 .site-footer {
   padding: 16px 6vw 24px;
@@ -356,7 +356,7 @@ form {
   color: var(--text-muted);
 }
 
-/ Responsive /
+/* Responsive */
 
 @media (max-width: 900px) {
   .hero {
@@ -393,4 +393,3 @@ form {
     padding-inline: 4vw;
   }
 }
-`
